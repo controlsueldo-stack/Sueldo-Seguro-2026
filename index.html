@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sueldo Seguro V2</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+
+</head>
+<body>
+    <div class="app-container">
+        <div id="pantalla-inicio">
+            <header>
+                <div class="logo-escudo"><span class="letra-s">S</span><div class="moneda">$</div></div>
+                <h1>SUELDO SEGURO.</h1>
+            </header>
+            <main>
+                <button class="btn-azul-principal" onclick="irACalcular()">CÁLCULO DE SUELDO</button>
+                <div class="fila-botones">
+                    <div class="tarjeta-blanca" onclick="alert('Próximamente...')"><div class="icono-azul">🕒</div><span class="texto-tarjeta">INGRESO HORAS</span></div>
+                    <div class="tarjeta-blanca" onclick="alert('Próximamente...')"><div class="icono-azul">📅</div><span class="texto-tarjeta">REGISTRO MENSUAL</span></div>
+                </div>
+            </main>
+        </div>
+
+        <div id="pantalla-calculo" style="display: none;">
+            <header class="header-calculo"><h2>Simulador de Recibo</h2><p>Escalas 2026</p></header>
+            <div class="contenido-calculo">
+                <div class="form-grupo">
+                    <label>Mes de Liquidación</label>
+                    <select id="mes-paritaria">
+                        <option value="marzo">Marzo 2026 (a cobrar en abril)</option>
+                        <option value="abril">Abril 2026 (a cobrar en mayo)</option>
+                        <option value="mayo" selected>Mayo 2026 ( a cobrar en junio)</option>
+                        <option value="junio">Junio 2026 (a cobrar en julio)</option>
+                    </select>
+                </div>
+                <div class="form-grupo">
+                    <label>Categoría</label>
+                    <select id="categoria">
+                        <option value="1136154">Vigilador General</option>
+                        <option value="1165213">Vigilador Principal</option>
+                        <option value="1215450">Adm. de Control</option>
+                    </select>
+                </div>
+                <div class="form-grupo"><label>Antigüedad (Años)</label><input type="number" id="antiguedad" value="0"></div>
+                <div class="form-grupo">
+                    <label>¿Afiliado al Sindicato?</label>
+                    <select id="afiliado"><option value="no">No</option><option value="si">Sí (Aporte +2%)</option></select>
+                </div>
+                <div class="form-grupo"><label>Horas Extras 50%</label><input type="number" id="h50" value="0"></div>
+                <div class="form-grupo"><label>Horas Extras 100%</label><input type="number" id="h100" value="0"></div>
+                
+                <button class="btn-calcular" onclick="realizarCalculo()">CALCULAR AHORA</button>
+
+<div id="resultado-detalle" class="cuadro-recibo" style="display:none;">
+    <h4 style="margin-top:0; color:#3498db;">Detalle del Recibo:</h4>
+    <div class="item"><span>Sueldo Básico:</span> <span id="res-basico"></span></div>
+    <div class="item"><span>Antigüedad:</span> <span id="res-ant"></span></div>
+    <div class="item"><span>Presentismo (10%):</span> <span id="res-pres"></span></div>
+    <div class="item"><span>Horas Extras Totales:</span> <span id="res-extras"></span></div>
+    <div class="item rojo"><span>Retenciones (Ley + Gremio):</span> <span id="res-desc"></span></div>
+    <hr>
+    <div class="item"><span>Viáticos (No Rem.):</span> <span id="res-viatico"></span></div>
+    <div class="item"><span>Suma No Rem. (Acta):</span> <span id="res-norem"></span></div>
+    
+    <div class="total-final">
+        <small>NETO A COBRAR EN MANO</small>
+        <div id="res-total"></div>
+    </div>
+</div>
+
+                </div>
+                <button class="btn-volver" onclick="volverInicio()">← VOLVER AL INICIO</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
