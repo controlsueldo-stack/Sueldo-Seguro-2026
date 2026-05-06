@@ -6,10 +6,10 @@
     <title>Sueldo Seguro V2</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
-
 </head>
 <body>
     <div class="app-container">
+        <!-- Pantalla de Inicio -->
         <div id="pantalla-inicio">
             <header>
                 <div class="logo-escudo"><span class="letra-s">S</span><div class="moneda">$</div></div>
@@ -24,6 +24,7 @@
             </main>
         </div>
 
+        <!-- Pantalla de Cálculo -->
         <div id="pantalla-calculo" style="display: none;">
             <header class="header-calculo"><h2>Simulador de Recibo</h2><p>Escalas 2026</p></header>
             <div class="contenido-calculo">
@@ -32,16 +33,16 @@
                     <select id="mes-paritaria">
                         <option value="marzo">Marzo 2026 (a cobrar en abril)</option>
                         <option value="abril">Abril 2026 (a cobrar en mayo)</option>
-                        <option value="mayo" selected>Mayo 2026 ( a cobrar en junio)</option>
+                        <option value="mayo" selected>Mayo 2026 (a cobrar en junio)</option>
                         <option value="junio">Junio 2026 (a cobrar en julio)</option>
                     </select>
                 </div>
                 <div class="form-grupo">
                     <label>Categoría</label>
                     <select id="categoria">
-                        <option value="1136154">Vigilador General</option>
-                        <option value="1165213">Vigilador Principal</option>
-                        <option value="1215450">Adm. de Control</option>
+                        <option value="vigilador_general">Vigilador General</option>
+                        <option value="vigilador_principal">Vigilador Principal</option>
+                        <option value="adm_control">Adm. de Control</option>
                     </select>
                 </div>
                 <div class="form-grupo"><label>Antigüedad (Años)</label><input type="number" id="antiguedad" value="0"></div>
@@ -51,26 +52,34 @@
                 </div>
                 <div class="form-grupo"><label>Horas Extras 50%</label><input type="number" id="h50" value="0"></div>
                 <div class="form-grupo"><label>Horas Extras 100%</label><input type="number" id="h100" value="0"></div>
+                <div class="form-grupo"><label>Horas Nocturnas (21hs a 06hs)</label><input type="number" id="hNocturnas" value="0">
+                <!-- NUEVO CAMPO VACACIONES -->
+                <div class="form-grupo">
+                    <label>Días Vacaciones Gozadas</label>
+                    <input type="number" id="diasVacaciones" value="0" min="0" max="28">
+                    <p class="nota">* Plus diario CCT 507/07 (Máx. 21 días)</p>
+                </div>
                 
                 <button class="btn-calcular" onclick="realizarCalculo()">CALCULAR AHORA</button>
 
-<div id="resultado-detalle" class="cuadro-recibo" style="display:none;">
-    <h4 style="margin-top:0; color:#3498db;">Detalle del Recibo:</h4>
-    <div class="item"><span>Sueldo Básico:</span> <span id="res-basico"></span></div>
-    <div class="item"><span>Antigüedad:</span> <span id="res-ant"></span></div>
-    <div class="item"><span>Presentismo (10%):</span> <span id="res-pres"></span></div>
-    <div class="item"><span>Horas Extras Totales:</span> <span id="res-extras"></span></div>
-    <div class="item rojo"><span>Retenciones (Ley + Gremio):</span> <span id="res-desc"></span></div>
-    <hr>
-    <div class="item"><span>Viáticos (No Rem.):</span> <span id="res-viatico"></span></div>
-    <div class="item"><span>Suma No Rem. (Acta):</span> <span id="res-norem"></span></div>
-    
-    <div class="total-final">
-        <small>NETO A COBRAR EN MANO</small>
-        <div id="res-total"></div>
-    </div>
-</div>
-
+                <!-- Recibo de Resultados -->
+                <div id="resultado-detalle" class="cuadro-recibo" style="display:none;">
+                    <h4 style="margin-top:0; color:#3498db;">Detalle del Recibo:</h4>
+                    <div class="item"><span>Sueldo Básico:</span> <span id="res-basico"></span></div>
+                    <div class="item"><span>Antigüedad:</span> <span id="res-ant"></span></div>
+                    <div class="item"><span>Presentismo:</span> <span id="res-pres"></span></div>
+                    <div class="item"><span>Horas Extras:</span> <span id="res-extras"></span></div>
+                    <div class="item"><span>Horas Nocturnas:</span> <span id="res-nocturnas"></span></div>
+                    <!-- NUEVA LÍNEA PLUS VACACIONAL -->
+                    <div class="item" style="color: #27ae60; font-weight: bold;"><span>Plus Vacacional:</span> <span id="res-plusvac"></span></div>
+                    <div class="item rojo"><span>Retenciones:</span> <span id="res-desc"></span></div>
+                    <div class="item"><span>Viáticos (No Rem.):</span> <span id="res-viatico"></span></div>
+                    <div class="item"><span>Suma No Rem. (Acta):</span> <span id="res-norem"></span></div>
+                    
+                    <div class="total-final">
+                        <small>NETO A COBRAR EN MANO</small>
+                        <div id="res-total"></div>
+                    </div>
                 </div>
                 <button class="btn-volver" onclick="volverInicio()">← VOLVER AL INICIO</button>
             </div>

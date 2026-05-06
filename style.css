@@ -3,28 +3,29 @@ body { font-family: 'Segoe UI', sans-serif; background: #f8fafd; margin: 0; }
 
 .app-container { background: white; width: 100%; max-width: 450px; min-height: 100vh; margin: 0 auto; display: flex; flex-direction: column; box-shadow: 0 0 20px rgba(0,0,0,0.05); }
 
-/* Logo Escudo */
+/* Header e Inicio */
 header { text-align: center; padding: 40px 20px; }
 .logo-escudo { width: 85px; height: 85px; background: linear-gradient(135deg, #3498db, #2980b9); margin: 0 auto 15px; border-radius: 22px; display: flex; align-items: center; justify-content: center; position: relative; color: white; font-size: 45px; font-weight: bold; box-shadow: 0 8px 15px rgba(52, 152, 219, 0.3); }
 .moneda { position: absolute; bottom: 8px; right: 8px; background: white; color: #2980b9; border-radius: 50%; width: 24px; height: 24px; font-size: 13px; display: flex; align-items: center; justify-content: center; font-weight: bold; }
 header h1 { color: #1a3a5a; font-size: 22px; letter-spacing: 1.5px; margin: 0; font-weight: 800; }
 
-/* Botones Inicio */
 .btn-azul-principal { width: calc(100% - 40px); margin: 0 20px 20px; padding: 35px; background: #5dade2; color: white; border: none; border-radius: 18px; font-size: 24px; font-weight: bold; box-shadow: 0 10px 20px rgba(93, 173, 226, 0.4); cursor: pointer; }
 .fila-botones { display: flex; gap: 15px; padding: 0 20px; }
 .tarjeta-blanca { flex: 1; background: white; padding: 25px 10px; border-radius: 18px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08); cursor: pointer; }
 .icono-azul { font-size: 32px; margin-bottom: 8px; }
 .texto-tarjeta { color: #1a3a5a; font-weight: bold; font-size: 13px; display: block; line-height: 1.2; }
 
-/* Formulario */
+/* Formulario de Cálculo */
+.header-calculo { text-align: center; padding: 20px; background: #fdfdfd; }
 .contenido-calculo { padding: 0 25px 50px; }
 .form-grupo { margin-bottom: 15px; text-align: left; }
 label { display: block; margin-bottom: 6px; font-weight: bold; color: #34495e; font-size: 14px; }
 input, select { width: 100%; padding: 14px; border-radius: 12px; border: 1px solid #dce4ec; background: #fdfdfd; font-size: 15px; }
+.nota { font-size: 11px; color: #7f8c8d; margin-top: 4px; }
 
-.btn-calcular { width: 100%; padding: 18px; background: #27ae60; color: white; border: none; border-radius: 12px; font-size: 18px; font-weight: bold; margin-top: 10px; box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3); }
+.btn-calcular { width: 100%; padding: 18px; background: #27ae60; color: white; border: none; border-radius: 12px; font-size: 18px; font-weight: bold; margin-top: 10px; box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3); cursor: pointer; }
 
-/* Recibo */
+/* Detalle del Recibo */
 .cuadro-recibo { background: #f4f7f9; padding: 20px; border-radius: 15px; margin-top: 25px; border: 1px solid #eef2f5; }
 .item { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 15px; color: #2c3e50; }
 .rojo { color: #e74c3c; font-weight: bold; }
